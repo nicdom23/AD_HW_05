@@ -12,7 +12,7 @@ FILE (GLOB SOURCES "${PROJECT_SOURCE_DIR}/src/*.c"
 
 include_directories("${PROJECT_SOURCE_DIR}/include")
 
-SET(${LIB_REQUIRED_LIBRARIES} "")
+SET(${LIB_REQUIRED_LIBRARIES} "libbinheap.so")
 
 if ("${CMAKE_SYSTEM_NAME}" STREQUAL "Linux")
   # If your system is a Linux system, then try to detect if librt is 
