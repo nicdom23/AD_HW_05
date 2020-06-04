@@ -22,7 +22,7 @@ void test_and_print(void (*sort)(void *A, const unsigned int n,
                     const unsigned int rep)
 {
     int sorted;
-
+    
     printf("\t%lf",test(sort,A,n,elem_size,leq,rep,&sorted));
     if (!sorted) {
         printf(" (KO)");
@@ -43,6 +43,15 @@ int main(int argc, char *argv[])
     }
 
     unsigned int i;
+   
+    test_and_print(selection_sort, A,
+                       1<<2, sizeof(int),
+                       leq_int, 1);
+ 
+    test_and_print(insertion_sort, A,
+                       1<<2, sizeof(int),
+                       leq_int, 1);
+ 
     /*
     printf("Size\tInsertion Sort\t          \t        \n");
     printf("    \t(Random Case)\t(Best Case)\t(Worst Case)");
@@ -60,6 +69,7 @@ int main(int argc, char *argv[])
                        leq_int, NUM_OF_REPETITIONS);
     }
     */
+   /*
     printf("\n\n\n");
 
     printf("Size\tQuick Sort\t           \tQuick Sort + Select\n");
@@ -122,7 +132,7 @@ int main(int argc, char *argv[])
     }
 
     printf("\n");
-
+*/
     free(A);
     free(A_sorted);
     free(A_rev_sorted);
