@@ -5,6 +5,21 @@
 
 #include "total_order.h"
 
+size_t partition(void*A,int i, int j,int piv,const size_t elem_size,total_order leq);
+
+unsigned int pivot_select_call(void *A, int l_0,int r_0, 
+                       const size_t elem_size, 
+                       total_order leq);
+
+void quick_sort_call(void *A, int l_0,int r_0, 
+                const size_t elem_size, 
+                total_order leq);
+
+unsigned int select_index_call(void *A, int l_0,int r_0,
+                          const unsigned int i,
+                          const size_t elem_size, 
+                          total_order leq);
+
 /**********************************************************************
  * An implementation for the Select algorithm.
  *
@@ -27,6 +42,11 @@ unsigned int select_index(void *A, const unsigned int n,
                           const size_t elem_size, 
                           total_order leq);
 
+
+
+void quick_sort_select_call(void *A, int l_0,int r_0, 
+                const size_t elem_size, 
+                total_order leq);
 /**********************************************************************
  * An implementation for the Quick Sort algorithm.
  *

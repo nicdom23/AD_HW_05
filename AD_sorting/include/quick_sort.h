@@ -5,6 +5,16 @@
 
 #include "total_order.h"
 
+int is_ok(size_t i);
+
+size_t partition(void*A,int i, int j,int piv,const size_t elem_size,total_order leq);
+
+void quick_sort_call(void *A, int l_0,int r_0, 
+                const size_t elem_size, 
+                total_order leq);
+
+
+
 /**********************************************************************
  * An implementation for the Quick Sort algorithm.
  *

@@ -44,10 +44,11 @@ int main(int argc, char *argv[])
 
     unsigned int i;
    
-    test_and_print(selection_sort, A,
-                       1<<2, sizeof(int),
+    test_and_print(quick_sort_select, A,
+                       1<<10, sizeof(int),
                        leq_int, 1);
  
+    printf("\n  ------  \n");
     test_and_print(insertion_sort, A,
                        1<<2, sizeof(int),
                        leq_int, 1);
