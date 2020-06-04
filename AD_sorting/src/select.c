@@ -23,8 +23,8 @@ unsigned int pivot_select_call(void *A, int l_0,int r_0,
     printf("\nSTEP2 , %d , %d, %d \n",chunks, r,l);
     for(size_t c = 0; c < chunks;c++){
         //printf("\nSTEP3 %d \n  ",(-1)/5);
-        int c_l= 1+c*5 -1;
-        int c_r =5 +c*5 -1; 
+        int c_l = 1+c*5 -1;
+        int c_r = 5 +c*5 -1; 
       
         if (c_l<(1<<10)&&c_r<(1<<10)){
         quick_sort_call(A, c_l,c_r, 
