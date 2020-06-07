@@ -23,6 +23,8 @@ void test_and_print(void (*sort)(void *A, const unsigned int n,
 {
     int sorted;
     
+
+   
     printf("\t%lf",test(sort,A,n,elem_size,leq,rep,&sorted));
     if (!sorted) {
         printf(" (KO)");
@@ -43,6 +45,7 @@ int main(int argc, char *argv[])
     }
 
     unsigned int i;
+  
     printf("Size\tInsertion Sort\t          \t        \n");
     printf("    \t(Random Case)\t(Best Case)\t(Worst Case)");
     for (i=2; (1<<i)<=MAX_SIZE_ALL; i++) {
@@ -105,7 +108,7 @@ int main(int argc, char *argv[])
     printf("\n\n\n");
     printf("Size\tQuick Sort\tQuick Sort +\tHeap Sort\n");
     printf("    \t          \t  Select\n");
-    printf("    \t(Random Case)\t(Random Case)\t");
+    printf("    \t(Random Case)\t(Random Case)\t(Random Case)");
     for (; (1<<i)<=MAX_SIZE_NLOGN; i++) {
         const unsigned int A_size=1<<i;
         printf("\n2^%d",i);

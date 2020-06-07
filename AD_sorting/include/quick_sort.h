@@ -5,10 +5,21 @@
 
 #include "total_order.h"
 
-int is_ok(size_t i);
+/*************************
+ * Functions that performs a G-E-S partition based on the pivot @param piv 
+ * on the array @param A from the index @param i to the index @param j. 
+ * 
+ * Saves the indexes at the extremes of the array into @param left_piv and @param right_piv
+ * 
+ *****************/
+void partition(void*A,int i, int j,int piv,const size_t elem_size,total_order leq,int* left_piv,int* right_piv);
+ 
+/******************
+Function for recursive call of regular quick-sort.
 
-size_t partition(void*A,int i, int j,int piv,const size_t elem_size,total_order leq);
-
+Works on the array @param A for the index @param l_0 to the index @param r_0
+Picks l_0 as a pivot.
+********************/
 void quick_sort_call(void *A, int l_0,int r_0, 
                 const size_t elem_size, 
                 total_order leq);

@@ -1,13 +1,15 @@
 #include "bubble_sort.h"
-
+#include <stdio.h>
 void bubble_sort(void *A, const unsigned int n, 
                  const size_t elem_size, 
                  total_order leq)
 {
-    for(size_t i = n-1; i<0;i--){
-        for(size_t j = 0;j<n-1;j++)
-            if(leq(A+j*elem_size,A+(j+1)*elem_size))
+    
+    for(size_t i = n-1; i>0;i--)
+        for(size_t j = 0;j<i;j++)
+            if(leq(A+(j+1)*elem_size,A+j*elem_size))
                 swap(A+j*elem_size,A+(j+1)*elem_size,elem_size);
+       
 
-    }
+
 }

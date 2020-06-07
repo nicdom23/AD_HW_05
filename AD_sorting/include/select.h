@@ -5,18 +5,28 @@
 
 #include "total_order.h"
 
-size_t partition(void*A,int i, int j,int piv,const size_t elem_size,total_order leq);
+//for partition() and quick_sort_call()
+#include "quick_sort.h"
+void selection_sort_call(void *A,int i,int j, 
+                    const size_t elem_size, 
+                    total_order leq);
+/******************
+Function for Pivot selecting.
 
-unsigned int pivot_select_call(void *A, int l_0,int r_0, 
+Works on the array @param A for the index @param l_0 to the index @param r_0
+********************/
+int pivot_select_call(void *A, int l_0,int r_0, 
                        const size_t elem_size, 
                        total_order leq);
 
-void quick_sort_call(void *A, int l_0,int r_0, 
-                const size_t elem_size, 
-                total_order leq);
 
-unsigned int select_index_call(void *A, int l_0,int r_0,
-                          const unsigned int i,
+/******************
+Function for recursive call of SELECT.
+
+Works on the array @param A for the index @param l_0 to the index @param r_0
+********************/
+int select_index_call(void *A, int l_0,int r_0,
+                          const  int i,
                           const size_t elem_size, 
                           total_order leq);
 
@@ -37,16 +47,23 @@ unsigned int select_index_call(void *A, int l_0,int r_0,
  * @param elem_size is the type size in bytes of the elements in A.
  * @param leq is the total order to be satisfied by the sorting.
  **********************************************************************/
-unsigned int select_index(void *A, const unsigned int n, 
-                          const unsigned int i,
+int select_index(void *A, const unsigned int n, 
+                          const  int i,
                           const size_t elem_size, 
                           total_order leq);
 
 
+/******************
+Function for recursive call of quick-sort using select.
 
+Works on the array @param A for the index @param l_0 to the index @param r_0
+Picks pivot_select_call(A, l,r, elem_size, leq) as a pivot
+
+********************/
 void quick_sort_select_call(void *A, int l_0,int r_0, 
                 const size_t elem_size, 
                 total_order leq);
+
 /**********************************************************************
  * An implementation for the Quick Sort algorithm.
  *

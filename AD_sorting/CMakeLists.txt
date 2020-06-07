@@ -48,7 +48,8 @@ endif()
 
 
 add_executable (test_sorting ${SOURCES})
-set(BINHEAP_PATH "${CMAKE_CURRENT_SOURCE_DIR}/libbinheap")
+set(BINHEAP_PATH "${CMAKE_CURRENT_SOURCE_DIR}/binheaplib")
+
 if(BINHEAP_PATH)
 	message("Linking binheap library")
 	add_library(binheap SHARED IMPORTED) 
